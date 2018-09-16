@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script type="text/javascript">			
+			function play1(){
+				var audio1=document.getElementById('audio1');
+				var audio=document.getElementById('audio');
+				audio.src=audio1.src;
+				console.log(audio.src)
+			}
+			function play2(){
+				var audio2=document.getElementById('audio2');
+				var audio=document.getElementById('audio');
+				audio.src=audio2.src;
+				console.log(audio.src)
+			}
+		</script>
+		<style type="text/css">
+			ul{list-style-type: none;
+				float: left;}
+			li{
+				height: 30px;
+				}
+			#header{
+				width: 200px;
+				height: 50px;
+				float: left;
+				background-color: black;
+				color: white;
+				border-style: solid;
+			}
+			a:hover{
+				text-decoration: underline;
+			}
+			#article{
+				clear: both;
+			}
+			#footer{
+				clear: both;
+			}
+			.bo{
+				color: cornflowerblue;
+				margin-left: 60px;
+			}
+			.head{
+				margin-left: 60px;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+		<div id="header"><p class="head"><a>在线音乐 </a></p></div>
+		<div id="header"><p class="head"><a>本地音乐 </a></p></div>
+		</header>
+		<article>
+		<div id="article">
+			<audio src="1.mp3" id="audio1"></audio>
+			<ul>
+				<li>陪你度过漫长岁月 </li>
+				<li>素颜</li>
+			</ul>
+			<ul class="bo">
+				<li><input type="button"  onclick='play1()' value='播放'></li>
+				<li><input type="button"  onclick='play2()' value='播放'></li>
+			</ul>
+			
+		</div>
+		</article>
+		<footer id="footer">
+			<audio src="1.mp3" id="audio1"></audio>
+			<audio src="2.mp3"  id="audio2"></audio>
+			<audio id='audio' controls="controls" autoplay="autoplay"></audio>
+
+		</footer>
+	</body>
+</html>
