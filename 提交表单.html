@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>个人信息页</title>
+		<script>
+			window.onload=function(){
+		  	var re=/[0-9]+/
+			var email=document.getElementById('email');
+			var list=document.getElementById('emaillist');
+			email.onkeyup=function(){
+				if(re.test(email.value)){
+					for(var i=0;i<5;i++){
+						list.children[i].value=list.children[i].value.replace(/\d+/,email.value);						
+					}
+				}
+			}
+		  }
+		</script>
+	</head>
+	<body>
+		<h1><b>请填写个人信息</b></h1><br/>
+		<form>			
+		<fieldset id="">
+			<legend style="color:red;">基本信息</legend>		
+			<form id="testform" method="get" action="form.asp">
+				姓名<input type="text" placeholder="请输入姓名"><a style="color: red;">*</a><br/>
+				年龄<input type="number" min='0' max='100' step='1' placeholder="20"/>
+
+			</form>
+		</fieldset>
+		<fieldset id="">
+			<legend style="color:red;">你想在哪里收到邮件？</legend>
+			<form>
+			邮箱
+			<input type="email" id='email'  placeholder="请输入邮箱" autocomplete="on"  list='emaillist' results><span style="color: red;">*</span>
+			<datalist id="emaillist">
+				<option>123@qq.com</option>
+				<option>123@163.com</option>
+				<option>123@gmail.com</option>
+				<option>123@yahoo.com</option>
+				<option>123@126.com</option>
+			</datalist>
+			</form>
+		</fieldset>
+		<fieldset id="">
+			<legend style="color:red;">收入情况</legend>
+			<form>
+				月收入<input type="number" value="2000" /> <br/>
+				银行卡<input type="text" name="card">
+				有效期<input type="date" name="datedemo"/>
+			</form>
+		</fieldset>
+		<fieldset id="">
+			<legend style="color:red;">选取提交文件</legend>
+			<label>文件</label>
+			<input type="file" multiple="">
+		</fieldset>
+		<br/>
+		<input type="submit" value="提交"/>
+	</form>
+	<script type="text/javascript">
+		
+	</script>
+	</body>
+</html>
