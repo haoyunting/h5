@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			fieldset {
+            width: 600px;
+            margin: 30px auto;
+            height: 200px;
+        }
+			legend {
+            color: red;
+            font-weight: bold;
+            font-size: 30px;
+        }
+        	div{
+        		width: 400px;
+        		height: 50px;
+        		margin-left: 40px;
+        		margin-top: 20px;
+        		border: 1px solid gainsboro;
+        	}
+        	input{
+        		margin-top: 10px;
+        		margin-left: 15px;
+        	}
+        	p{
+        		background-color: lightskyblue;
+        		text-indent: 2em;
+        	}
+        	.gray{
+        		background-color: gainsboro;
+        	}
+        	.purple{
+        		background-color: plum;
+        	}
+        	.blue{
+        		background-color: lightskyblue;
+        	}
+        	.green{
+        		background-color: greenyellow;
+        	}
+        	.orange{
+        		background-color: orange;
+        	}
+        	.red{
+        		background-color: red;
+        	}
+		</style>
+		<script type="text/javascript">
+			var storage=localStorage;
+			var colorArray=new Array('gray','purple','red','blue','orange','green');
+			function grayColor(){
+				var div1=document.getElementById('div');
+				div1.style.backgroundColor=colorArray[0];
+				window.localStorage.setItem('divBackColor',colorArray[0]);
+			}
+			function purpleColor(){
+				var div1=document.getElementById('div');
+				div1.style.backgroundColor=colorArray[1];
+				window.localStorage.setItem('divBackColor',colorArray[1]);
+			}
+			function redColor(){
+				var div1=document.getElementById('div');
+				div1.style.backgroundColor=colorArray[2];
+				window.localStorage.setItem('divBackColor',colorArray[2]);
+			}
+			function blueColor(){
+				var div1=document.getElementById('div');
+				div1.style.backgroundColor=colorArray[3];
+				window.localStorage.setItem('divBackColor',colorArray[3]);
+			}
+			function orangeColor(){
+				var div1=document.getElementById('div');
+				div1.style.backgroundColor=colorArray[4];
+				window.localStorage.setItem('divBackColor',colorArray[4]);
+			}
+			function greenColor(){
+				var div1=document.getElementById('div');
+				div1.style.backgroundColor=colorArray[5];
+				window.localStorage.setItem('divBackColor',colorArray[5]);
+			}
+			window.onload=function colorLoad(){
+				document.getElementById('div').style.backgroundColor=window.localStorage.getItem('divBackColor');
+				
+			}
+		</script>
+	</head>
+	<body>
+		<fieldset>
+			<legend>页面换肤</legend>
+			<div>
+				<input type="button" class="gray" onclick="grayColor()" />
+				<input type="button" class="purple" onclick="purpleColor()"/>
+				<input type="button" class="red" onclick="redColor()" />
+				<input type="button" class="blue" onclick="blueColor()"/>
+				<input type="button" class="orange" onclick="orangeColor()"/>
+				<input type="button" class="green" onclick="greenColor()"/>
+			</div>
+			<p id="div">LocalStorage将数据保存在客户端本地的硬件设备中，即使浏览器被关闭了，改数据任然存在，下次打开浏览器访问网站时仍然可以继续使用。</p>
+		</fieldset>
+	</body>
+</html>
